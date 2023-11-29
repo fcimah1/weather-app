@@ -1,0 +1,9 @@
+.card {
+    height: 100%;
+    background-color: #748cf1 !important;
+}
+
+.container .row .card .img {
+    width: 100px;
+    height: 100px;
+}
