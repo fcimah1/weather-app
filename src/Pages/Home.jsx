@@ -15,7 +15,6 @@ export default function Home() {
         setTextValue(`${position.coords.latitude},${position.coords.longitude}`);
     }
     useEffect(() => {
-        console.log(textValue)
         const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${textValue}`;
         const options = {
             method: 'GET',
@@ -27,6 +26,7 @@ export default function Home() {
         fetch(url, options)
             .then((res) => res.json())
             .then(value => setData(value))
+            .catch()
     }, [textValue])
 
     const date = new Date();
@@ -56,11 +56,11 @@ export default function Home() {
                                 <input ref={inpValue} className="form-control me-2"
                                     type="search" placeholder="Search" aria-label="Search" />
                                 <button onClick={() => {
-                                    setTextValue(inpValue.current.value)
+                                    (inpValue.current.value !== "") ? setTextValue(inpValue.current.value) : console.log();
                                 }} className="btn btn-primary" type="submit">Search</button>
                             </div>
                             <div className="img">
-                                <img src={data?.current?.condition.icon} className="card-img-top" alt="..." />
+                                <img src={data?.current?.condition?.icon} className="card-img-top" alt="..." />
                             </div>
                             <div className="card-body">
                                 <div className="card-text">{data?.current?.temp_c}<sup>°C</sup></div>
