@@ -47,10 +47,11 @@ export default function Home() {
     return (
         <>
             <div className="container pt-5">
+                <h2 className="card-title text-center p-4">Weather Now</h2>
+
                 <div className="row">
-                    <h2 className="card-title text-center p-4">Weather Now</h2>
-                    <div className="col-4 h-100">
-                        <div className="card text-center fs-3 p-3 bg-white" >
+                    <div className="col-md-4 col-sm-6 col-10 left-side  h-100">
+                        <div className="left-side-info text-center fs-3 p-3 bg-white" >
                             <div className="d-flex" role="search">
                                 <input ref={inpValue} className="form-control me-2"
                                     type="search" placeholder="Search" aria-label="Search" />
@@ -70,32 +71,32 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-8">
+                    <div className=" col-sm-6 col-md-8 ">
                         <div className="row ">
-                            <div className="col-4 mb-3">
+                            <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <BoxView headData="Wind"
                                     bodyData={`${data?.current?.wind_kph} km/h`}
                                     extraData={data?.current?.wind_dir} />
                             </div>
-                            <div className="col-4 mb-3">
+                            <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <BoxView headData="Humadity"
                                     bodyData={`${data?.current?.humidity} %`} />
                             </div>
-                            <div className="col-4 mb-3">
+                            <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <BoxView headData="Real Feel"
                                     bodyData={`${data?.current?.temp_c}°C`}
                                     extraData={data?.current?.condition?.text} />
 
                             </div>
-                            <div className="col-4 mb-3">
+                            <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <BoxView headData="UV index"
                                     bodyData={`${data?.current?.uv}`} />
                             </div>
-                            <div className="col-4 mb-3">
+                            <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <BoxView headData="Pressure"
                                     bodyData={`${data?.current?.pressure_mb}`} />
                             </div>
-                            <div className="col-4 mb-3">
+                            <div className="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <BoxView headData="Country"
                                     bodyData={`${data?.location?.country}`} />
                             </div>

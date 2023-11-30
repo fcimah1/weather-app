@@ -1,9 +1,52 @@
-.card {
-    height: 100%;
+.container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #748cf1 !important;
+    letter-spacing: 10px;
+    line-height: 40px;
+    font-weight: 700;
+    text-shadow: 2px 5px rgba(0, 0, 0, 0.303);
+}
+
+.container .row .card {
+    height: 100% !important;
+    color: white !important;
     background-color: #748cf1 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.634) !important;
+    transition: all .3s;
+}
+
+.container .row .left-side-info {
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.634) !important;
+}
+
+.container .row .card:hover {
+    color: black !important;
+    background-color: beige !important;
+
+
+}
+
+.container .row {
+    position: relative;
+}
+
+.container .row .left-side {
+    position: sticky;
+    top: 50px;
 }
 
 .container .row .card .img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    margin-top: 40px;
+}
+
+.container .row .card .img img {
+    object-fit: cover;
 }
