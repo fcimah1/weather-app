@@ -50,7 +50,7 @@ export default function Home() {
                 <h2 className="card-title text-center p-4">Weather Now</h2>
 
                 <div className="row">
-                    <div className="col-md-4 col-sm-6 col-10 left-side  h-100">
+                    <div className="col-md-4 col-sm-6 col-12 left-side  mb-4">
                         <div className="left-side-info text-center fs-3 p-3 bg-white" >
                             <div className="d-flex" role="search">
                                 <input ref={inpValue} className="form-control me-2"

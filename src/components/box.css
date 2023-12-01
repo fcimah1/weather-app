@@ -23,15 +23,13 @@
 
 .container .row .left-side-info {
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.634) !important;
+    min-height: 60vh;
 }
 
 .container .row .card:hover {
     color: black !important;
     background-color: beige !important;
     box-shadow: 0 4px 10px 3px rgba(0, 0, 0, 0.634) !important;
-
-
-
 }
 
 .container .row {
@@ -51,4 +49,12 @@
 
 .container .row .card .img img {
     object-fit: cover;
+}
+
+@media (max-width:576px) {
+    .container .row .left-side {
+        position: relative;
+        top: 0;
+    }
+
 }
