@@ -4,18 +4,18 @@ import BoxView from "../components/BoxView";
 export default function Home() {
 
     const inpValue = useRef()
-    const [textValue, setTextValue] = useState(getLocation())
+    const [currentLocation, setCurrentLocation] = useState(getLocation())
     const [data, setData] = useState([])
-    function getLocation() {
+  async  function getLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.watchPosition(showPosition);
+           await navigator.geolocation.watchPosition(showPosition);
         }
     }
     function showPosition(position) {
-        setTextValue(`${position.coords.latitude},${position.coords.longitude}`);
+        setCurrentLocation(`${position.coords.latitude},${position.coords.longitude}`);
     }
     useEffect(() => {
-        const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${textValue}`;
+        const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${currentLocation}`;
         const options = {
             method: 'GET',
             headers: {
@@ -27,7 +27,7 @@ export default function Home() {
             .then((res) => res.json())
             .then(value => setData(value))
             .catch()
-    }, [textValue])
+    }, [currentLocation])
 
     const date = new Date();
     const dateString = date.toDateString().split(" ");
@@ -56,7 +56,7 @@ export default function Home() {
                                 <input ref={inpValue} className="form-control me-2"
                                     type="search" placeholder="Search" aria-label="Search" />
                                 <button onClick={() => {
-                                    (inpValue.current.value !== "") ? setTextValue(inpValue.current.value) : console.log();
+                                    (inpValue.current.value !== "") ? setCurrentLocation(inpValue.current.value) : console.log();
                                 }} className="btn btn-primary" type="submit">Search</button>
                             </div>
                             <div className="img">
